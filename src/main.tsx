@@ -1,23 +1,30 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
 
 import Layout from './components/User/Layout.tsx'
 import UserSignIn from "./components/User/UserSignIn.tsx"
 
 import { BrowserRouter, Routes, Route } from "react-router"
 import UserSignUp from './components/User/UserSignUp.tsx'
+import DashboardLayout from './components/User/DashboardLayout.tsx'
+import UserProfile from './components/User/UserProfile.tsx'
+import UserLogout from './components/User/Userlogout.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path='/auth' element={<Layout />}>
+          <Route path="signin" element={<UserSignIn />} />
+          <Route path="signup" element={<UserSignUp />} />
+        </Route>
 
-        <Route element={<Layout />}>
-          <Route path="/auth/signin" element={<UserSignIn />} />
-          <Route path="/auth/signup" element={<UserSignUp />} />
+        <Route path='/dashboard' element={<DashboardLayout />}>
+          <Route path='users'>
+            <Route path="profile" element={<UserProfile />} />
+            <Route path="logout" element={<UserLogout />} />
+          </Route>
         </Route>
 
       </Routes>
