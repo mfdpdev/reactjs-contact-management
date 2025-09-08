@@ -53,10 +53,13 @@ export default function UsersignIn(){
                   <i className="fas fa-user text-gray-500"></i>
                 </div>
                 <Field type="text" id="username" name="username"
+                       autocomplete="off"
                        className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                        placeholder="Enter your username"/>
               </div>
-              <ErrorMessage name="username" component="div" />
+              <ErrorMessage name="username">
+                {(msg) => <div className="text-red-500 text-sm mt-2">{msg}</div>}
+              </ErrorMessage>
             </div>
 
             <div className="mb-6">
@@ -66,10 +69,13 @@ export default function UsersignIn(){
                   <i className="fas fa-lock text-gray-500"></i>
                 </div>
                 <Field type="password" id="password" name="password"
+                       autocomplete="off"
                        className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                        placeholder="Enter your password" required />
               </div>
-              <ErrorMessage name="password" component="div" />
+              <ErrorMessage name="password">
+                {(msg) => <div className="text-red-500 text-sm mt-2">{msg}</div>}
+              </ErrorMessage>
             </div>
 
             <div className="mb-6">
@@ -82,7 +88,7 @@ export default function UsersignIn(){
             <div className="text-center text-sm text-gray-400">
               Don't have an account?
               <Link to="/auth/signup"
-                    className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">Sign up</Link>
+                    className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"> Sign up</Link>
             </div>
           </Form>
         )}
