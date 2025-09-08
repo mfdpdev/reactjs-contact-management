@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
 
 export default function UsersignIn(){
 
@@ -18,28 +19,15 @@ export default function UsersignIn(){
 
         <Formik
           initialValues={{username: '', password: ''}}
-          validate={ values => {
-
-            const errors: {
-              username?: string,
-              password?: string,
-            } = {};
-
-            console.log(values.username, "lord");
-            if(!values.username){
-              errors.username = "Required";
-            }else if(values.username !== "lord"){
-              errors.username = "Username or Password are wrong!";
-            }
-
-            if(values.password != "lord"){
-              errors.password = "Username or Password are wrong!";
-            }
-
-            return errors;
-          }}
-          onSubmit={(_, { setSubmitting }) => {
+          validationSchema={
+            Yup.object({
+              username: Yup.string().min(4, "Username must be at least 4 characters").max(15, "Username must be 15 characters or less").required('Username is required'),
+              password: Yup.string().min(8, "Password must be at least 8 characters").matches(/^(?=.*[A-Z])(?=.*\d).{6,}$/, 'Password must contain at least one uppercase letter and one number').required('Password is required'),
+            })
+          }
+          onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
             }, 400);
           }}
