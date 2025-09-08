@@ -108,7 +108,7 @@ export default function UserSignUp(){
 
               <div className="text-center text-sm text-gray-400">
                 Already have an account?
-                <Link to="/auth/signin" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">Sign
+                <Link to="/auth/signin" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"> Sign
                   in</Link>
               </div>
             </Form>
