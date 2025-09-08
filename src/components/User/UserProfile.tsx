@@ -85,8 +85,7 @@ export default function UserProfile(){
                   </div>
                 </div>
                 <div className="mt-6">
-                  <button type="submit"
-                          className="w-full bg-gradient text-white py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center">
+                  <button type="submit" className="w-full text-gray-900 border focus:outline-none focus:ring-4 font-medium rounded-lg px-4 py-3 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 focus:ring-gray-700">
                     <i className="fas fa-save mr-2"></i> Update Profile
                   </button>
                 </div>
@@ -155,8 +154,7 @@ export default function UserProfile(){
                   </div>
                 </div>
                 <div className="mt-6">
-                  <button type="submit"
-                          className="w-full bg-gradient text-white py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center">
+                  <button type="submit" className="w-full text-gray-900 border focus:outline-none focus:ring-4 font-medium rounded-lg px-4 py-3 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 focus:ring-gray-700">
                     <i className="fas fa-key mr-2"></i> Update Password
                   </button>
                 </div>

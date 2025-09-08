@@ -100,8 +100,7 @@ export default function UserSignUp(){
               </div>
 
               <div className="mb-6">
-                <button type="submit" disabled={isSubmitting}
-                        className="w-full bg-gradient text-white py-3 px-4 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5">
+                <button type="submit" disabled={isSubmitting} className="w-full text-gray-900 border focus:outline-none focus:ring-4 font-medium rounded-lg px-4 py-3 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 focus:ring-gray-700">
                   <i className="fas fa-user-plus mr-2"></i> Register
                 </button>
               </div>
