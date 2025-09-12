@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router";
+import { alertConfirm } from "../../lib/alert";
 
 export default function ContactList(){
   const [name, setName] = useState("");
@@ -20,14 +21,14 @@ export default function ContactList(){
       phone: "hei",
     },
     {
-      id: "1",
+      id: "2",
       first_name: "hei",
       last_name: "hei",
       email: "hei",
       phone: "hei",
     },
     {
-      id: "1",
+      id: "3",
       first_name: "hei",
       last_name: "hei",
       email: "hei",
@@ -36,7 +37,9 @@ export default function ContactList(){
   ];
 
   function handleSearchContacts(){}
-  function handleContactDelete(){}
+  async function handleContactDelete(){
+    await alertConfirm("Are you sure want to delete this contact?")
+  }
   function handlePageChange(){}
   return (
     <>
