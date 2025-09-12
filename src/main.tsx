@@ -11,6 +11,7 @@ import DashboardLayout from './components/User/DashboardLayout.tsx'
 import UserProfile from './components/User/UserProfile.tsx'
 import UserLogout from './components/User/Userlogout.tsx'
 import ContactList from './components/Contact/ContactList.tsx'
+import ContactCreate from './components/Contact/ContactCreate.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -28,7 +29,8 @@ createRoot(document.getElementById('root')!).render(
           </Route>
 
           <Route path='contacts'>
-            <Route path='' element={<ContactList />} />
+            <Route path="" element={<ContactList />} />
+            <Route path='create' element={<ContactCreate />} />
           </Route>
         </Route>
 
