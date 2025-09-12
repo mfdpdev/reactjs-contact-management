@@ -13,6 +13,7 @@ import UserLogout from './components/User/Userlogout.tsx'
 import ContactList from './components/Contact/ContactList.tsx'
 import ContactCreate from './components/Contact/ContactCreate.tsx'
 import ContactEdit from './components/Contact/ContactEdit.tsx'
+import ContactDetail from './components/Contact/ContactDetail.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="" element={<ContactList />} />
             <Route path='create' element={<ContactCreate />} />
             <Route path=':id'>
+              <Route path='' element={<ContactDetail />} />
               <Route path='edit' element={<ContactEdit />} />
             </Route>
           </Route>
