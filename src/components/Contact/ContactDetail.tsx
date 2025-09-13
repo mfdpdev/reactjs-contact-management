@@ -100,7 +100,7 @@ export default function ContactDetail(){
                 <Link to={`/dashboard/contacts/${id}/addresses/create`} className="block p-6 h-full">
                   <div className="flex flex-col items-center justify-center h-full text-center">
                     <div
-                      className="w-20 h-20 bg-gradient rounded-full flex items-center justify-center mb-5 shadow-lg transform transition-transform duration-300 hover:scale-110">
+                      className="w-20 h-20 bg-gradient rounded-lg flex items-center justify-center mb-5 shadow-lg transform transition-transform duration-300 hover:scale-110">
                       <i className="fas fa-plus text-2xl text-white"></i>
                     </div>
                     <p className="text-gray-300">Add Address</p>
@@ -148,11 +148,11 @@ export default function ContactDetail(){
                   </div>
                   <div className="flex justify-end space-x-3">
                     <Link to={`/dashboard/contacts/${id}/addresses/${address.id}/edit`}
-                          className="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                          className="px-5 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center shadow-md">
                       <i className="fas fa-edit mr-2"></i> Edit
                     </Link>
                     <button onClick={() => handleDeleteAddress(address.id)}
-                      className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                      className="px-4 py-2 bg-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                       <i className="fas fa-trash-alt mr-2"></i> Delete
                     </button>
                   </div>

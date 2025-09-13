@@ -101,7 +101,7 @@ export default function ContactList(){
             </div>
             <div className="mt-5 text-right">
               <button type="submit"
-                      className="px-5 py-3 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-lg transform hover:-translate-y-0.5">
+                      className="px-5 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 shadow-md">
                 <i className="fas fa-search mr-2"></i> Search
               </button>
             </div>
@@ -115,7 +115,7 @@ export default function ContactList(){
           <Link to="/dashboard/contacts/create" className="block p-6 h-full">
             <div className="flex flex-col items-center justify-center h-full text-center">
               <div
-                className="w-20 h-20 bg-gradient rounded-full flex items-center justify-center mb-5 shadow-lg transform transition-transform duration-300 hover:scale-110">
+                className="w-20 h-20 bg-gradient rounded-lg flex items-center justify-center mb-5 shadow-lg transform transition-transform duration-300 hover:scale-110">
                 <i className="fas fa-user-plus text-3xl text-white"></i>
               </div>
               <h2 className="text-xl font-semibold text-white mb-3">Create New Contact</h2>
@@ -166,11 +166,11 @@ export default function ContactList(){
               </Link>
               <div className="mt-4 flex justify-end space-x-3">
                 <Link to={`/dashboard/contacts/${contact.id}/edit`}
-                      className="px-4 py-2 bg-gradient text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                      className="px-5 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center shadow-md">
                   <i className="fas fa-edit mr-2"></i> Edit
                 </Link>
                 <button onClick={() => handleContactDelete(contact.id)}
-                        className="px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
+                        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-medium shadow-md flex items-center">
                   <i className="fas fa-trash-alt mr-2"></i> Delete
                 </button>
               </div>
