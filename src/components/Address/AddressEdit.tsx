@@ -1,8 +1,23 @@
 import { Formik, Form, Field, ErrorMessage } from "formik"
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import * as Yup from "yup"
 
-export default function AddressCreate(){
+export default function AddressEdit(){
+
+  const [ data, setData ] = useState<{
+    street: string,
+    city: string,
+    province: string,
+    country: string,
+    postalCode: string,
+  }>({
+    street: "",
+    city: "",
+    province: "",
+    country: "",
+    postalCode: "",
+  })
 
   const { id } = useParams()
   const contact: any = {
@@ -13,6 +28,18 @@ export default function AddressCreate(){
     phone: "hei",
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      setData({
+        street: "hehe",
+        city: "hehe",
+        province: "hehe",
+        country: "hehe",
+        postalCode: "hehe",
+      })
+    }, 200)
+  }, [])
+
   return (
     <>
       <div className="flex items-center mb-6">
@@ -21,7 +48,7 @@ export default function AddressCreate(){
           <i className="fas fa-arrow-left mr-2"></i> Back to Contact Details
         </Link>
         <h1 className="text-2xl font-bold text-white flex items-center">
-          <i className="fas fa-plus-circle text-blue-400 mr-3"></i> Add New Address
+          <i className="fas fa-map-marker-alt text-blue-400 mr-3"></i> Edit Address
         </h1>
       </div>
 
@@ -41,7 +68,8 @@ export default function AddressCreate(){
           </div>
 
           <Formik
-            initialValues={{street: '', city: "", province: '', country: "", postalCode: ""}}
+            initialValues={data}
+            enableReinitialize={true}
             validationSchema={
               Yup.object({
                 street: Yup.string()
@@ -76,9 +104,9 @@ export default function AddressCreate(){
                          className="w-full pl-10 pr-3 py-3 bg-gray-700 bg-opacity-50 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                          placeholder="Enter street address" />
                 </div>
-                  <ErrorMessage name="street">
-                    {(msg) => <div className="text-red-500 text-sm mt-2">{msg}</div>}
-                  </ErrorMessage>
+                <ErrorMessage name="street">
+                  {(msg) => <div className="text-red-500 text-sm mt-2">{msg}</div>}
+                </ErrorMessage>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
@@ -150,7 +178,7 @@ export default function AddressCreate(){
                 </Link>
                 <button type="submit"
                       className="px-5 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 flex items-center shadow-md">
-                  <i className="fas fa-plus-circle mr-2"></i> Add Address
+                  <i className="fas fa-save mr-2"></i> Save Changes
                 </button>
               </div>
             </Form>
